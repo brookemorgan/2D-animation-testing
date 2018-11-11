@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-	void Start ()
+    Animator animator;
+
+    private void Awake()
     {
-		
-	}
-	
-	void Update ()
+        animator = GetComponent<Animator>();
+    }
+
+    void Update ()
     {
-		
+        animator.SetBool("IsWalking", Input.GetButton("Horizontal"));
 	}
 }
