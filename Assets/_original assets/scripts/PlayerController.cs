@@ -5,14 +5,30 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     Animator animator;
+    new SpriteRenderer renderer; // jfc unity remove these legacy properties already
+    Rigidbody2D rb;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
+        renderer = GetComponent<SpriteRenderer>();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    void Update ()
+    float Horizontal => Input.GetAxis("Horizontal");
+    bool IsMoving => Horizontal != 0;
+
+    public float WalkSpeed = 10;
+
+    void FixedUpdate ()
     {
-        animator.SetBool("IsWalking", Input.GetButton("Horizontal"));
+        animator.SetBool("IsWalking", IsMoving);
+        if (!IsMoving) return;
+
+        renderer.flipX = Horizontal < 0;
+
+        rb.velocity = new Vector2(Horizontal * WalkSpeed, rb.velocity.y);
+        rb.rotation = 0;
+        rb.angularVelocity = 0;
 	}
 }
