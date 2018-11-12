@@ -345,7 +345,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 366666866}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.91, y: 5.45, z: -0.24302456}
+  m_LocalPosition: {x: 9.17, y: 3.84, z: -0.24302456}
   m_LocalScale: {x: 0.4135, y: 0.4135, z: 0.4135}
   m_Children: []
   m_Father: {fileID: 30271656}
@@ -502,7 +502,7 @@ Transform:
   m_GameObject: {fileID: 810460834}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -7.54, y: 0.85, z: 0.24302456}
-  m_LocalScale: {x: 0.34673, y: 0.34673, z: 0.34673}
+  m_LocalScale: {x: 0.5278618, y: 0.5278618, z: 0.5278618}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -561,8 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1ebcd576f79db9a489590fee789222f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WalkSpeed: 10
-  JumpForce: 800
+  WalkSpeed: 12.5
+  JumpForce: 1100
 --- !u!50 &810460840
 Rigidbody2D:
   serializedVersion: 4

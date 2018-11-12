@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     {
         animator.SetBool("IsWalking", IsMoving);
 
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetKeyDown(KeyCode.Space))
             Jump();
 
         if (!IsMoving) return;
