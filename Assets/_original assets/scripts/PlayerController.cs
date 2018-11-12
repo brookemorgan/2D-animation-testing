@@ -23,6 +23,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate ()
     {
         animator.SetBool("IsWalking", IsMoving);
+
+        if (Input.GetButtonDown("Jump"))
+            Jump();
+
         if (!IsMoving) return;
 
         renderer.flipX = Horizontal < 0;
@@ -31,4 +35,16 @@ public class PlayerController : MonoBehaviour
         rb.rotation = 0;
         rb.angularVelocity = 0;
 	}
+
+    public float JumpForce = 20;
+    void Jump()
+    {
+        animator.SetBool("IsJumping", true);
+        rb.AddForce(Vector2.up * JumpForce);
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        animator.SetBool("IsJumping", false);
+    }
 }
